@@ -1,0 +1,16 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+service_obj = Service("C:/Users/banuv/Downloads/chromedriver_win32/chromedriver.exe")
+driver = webdriver.Chrome(service=service_obj)
+driver.get("https://rahulshettyacademy.com/angularpractice")
+#driver.find_element(By.LINK_TEXT,"Forgot password?").click()
+
+#driver.find_element(By.CSS_SELECTOR,"input[type='email']").send_keys("banuvijay16@gmail.com")
+#driver.find_element(By.XPATH,"//input[@id='userPassword']").send_keys("123")
+#driver.find_element(By.CSS_SELECTOR,"#confirmPassword").send_keys("123")
+#driver.find_element(By.CSS_SELECTOR,"button[type='submit']").click()
+dropdown = Select(driver.find_element(By.ID,"exampleFormControlSelect1"))
+dropdown.select_by_index(0)
+dropdown.select_by_visible_text("Female")
